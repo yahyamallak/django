@@ -52,71 +52,35 @@
                   <button type="submit" class="btn btn-success">save</button>
                   <button id="backcat" class="btn btn-primary ">back</button>
               </form>  
-             
+             {% for cat in category %}
                   <li style="cursor: pointer;" class="nav-item">
                     <a id="" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>test 1</p>
+                      <p>{{cat.name}}</p>
                     </a>
                   </li>
- 
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 2</p>
-                    </a>
-                  </li>
-
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 3</p>
-                    </a>
-                  </li>
-
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 4</p>
-                    </a>
-                  </li>
-
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 5</p>
-                    </a>
-                  </li>
-
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 6</p>
-                    </a>
-                  </li>
-        
-
+              {% endfor %}
             </ul>
           </li>
 
-          <li class="nav-header">الكتب المستعارة</li>
+          <li class="nav-header">Books</li>
           
           <li style="cursor: pointer;" class="nav-item">
             <a id="statusSold" class="nav-link">
               <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">تم بيعه</p>
+              <p class="text">Sold</p>
             </a>
           </li>
           <li style="cursor: pointer;" class="nav-item">
             <a id="" class="nav-link">
               <i class="nav-icon far fa-circle text-warning"></i>
-              <p>تم استعارته</p>
+              <p>Rented</p>
             </a>
           </li>
           <li style="cursor: pointer;" class="nav-item">
             <a id="" class="nav-link">
               <i class="nav-icon far fa-circle text-info"></i>
-              <p>متاح</p>
+              <p>Available</p>
             </a>
           </li>
         </ul>
