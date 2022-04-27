@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="direction: rtl;" class="wrapper">
+<div class="wrapper">
 
 
 
@@ -104,7 +104,7 @@
           <!-- end form add books -->
   
   
-          <!-- تصنيفات-->
+          <!-- Categories-->
   
           <div class="row justify-content-center mb-3">
             <div class="col-4 ">
@@ -129,8 +129,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Edit</a>
-                    <a class="dropdown-item" href="#">Delete</a>
+                    <a class="dropdown-item" href="{% url 'update' book.id %}">Edit</a>
+                    <a class="dropdown-item" href="{% url 'delete' book.id %}">Delete</a>
                 <!-- Button trigger modal -->
                   </div>
                 </div>
