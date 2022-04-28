@@ -52,6 +52,20 @@
 
 <script>
 
+  $(document).ready(function(){
+    var total = 0;
+    $('.totalprice').each(function(){
+      $(this).hide();
+      var salary = parseInt($(this).text());
+      total = total + salary;
+    });
+    $('#totalsalarys').text(total);
+  });
+
+  $("#rentaldays").keyup(function(){
+    $("#totalrental").val($(this).val()*$("#rentalprice").val()); 
+  });
+
   $("#catinput").hide();
 
   $("#addcat").click(function(){
@@ -61,6 +75,21 @@
   $("#backcat").click(function(){
     $("#catinput").hide();
   });
+
+
+  {% for book in books %}
+
+  $(".cat{{book.category.id}}").click(function(){
+    $(".bookhide").hide();
+    $(".book{{book.category.id}}").show();
+  });
+
+  $(".status{{book.status}}").click(function(){
+    $(".bookhide").hide();
+    $(".book{{book.status}}").show();
+  });
+
+  {% endfor %}
 
 </script>
 
@@ -176,7 +205,7 @@ $(function () {
     type: 'pie',
     data: {
       datasets: [{
-        data: ['35','25','40'],
+        data: ['{{bookavailable}}','{{booksold}}','{{bookrented}}'],
         backgroundColor :["#27c100","#f3545d","#fdaf4b"],
         borderWidth: 10,
         
